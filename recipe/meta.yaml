@@ -1,5 +1,5 @@
 {% set name = "qiskit-ibmq-provider" %}
-{% set version = "0.19.1" %}
+{% set version = "0.19.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-ibmq-provider-{{ version }}.tar.gz
-  sha256: 67e361f169e2a816904c0a2fa62ff8a843675ff64f57ba9571986206f49f1f31
+  sha256: 489407bed016a04e9db05a2d2c44b50843621408e392ace4d067bad071aa5fc9
 
 build:
   noarch: python
