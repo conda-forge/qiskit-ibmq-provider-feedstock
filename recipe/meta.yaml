@@ -1,5 +1,5 @@
 {% set name = "qiskit-ibmq-provider" %}
-{% set version = "0.19.2" %}
+{% set version = "0.20.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-ibmq-provider-{{ version }}.tar.gz
-  sha256: 489407bed016a04e9db05a2d2c44b50843621408e392ace4d067bad071aa5fc9
+  sha256: 758938ce13a09f53ada9f4852891d7ca7ba98fddab6b9850417bbcb0efc26c2e
 
 build:
   noarch: python
@@ -19,14 +19,15 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - numpy >=1.13
+    - dataclasses >=0.8
+    - numpy <1.24
     - python >=3.7
     - python-dateutil >=2.8.0
     - qiskit-terra >=0.18.0
     - requests >=2.19
     - requests_ntlm >=1.1.0
     - urllib3 >=1.21.1
-    - websocket-client >=1.0.1
+    - websocket-client <=1.3.3
     - websockets >=10.0
 
 test:
