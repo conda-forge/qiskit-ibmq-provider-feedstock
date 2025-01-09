@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-ibmq-provider-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qiskit-ibmq-provider-{{ version }}.tar.gz
   sha256: f343025ca1ddaa6aad071e53f5b4c60df798aff0f3681266a8de35e933e61a9c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - dataclasses >=0.8
     - numpy <1.24
-    - python >=3.7
+    - python >={{ python_min }}
     - python-dateutil >=2.8.0
     - qiskit-terra >=0.18.0
     - requests >=2.19
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Qiskit/qiskit-ibmq-provider
